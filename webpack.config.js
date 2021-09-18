@@ -1,17 +1,17 @@
-const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const HTMLWebpackPlugin = require('html-webpack-plugin')
 
-const NODE_ENV = process.env.NODE_ENV;
-const IS_DEV = NODE_ENV === 'development';
-const IS_PROD = NODE_ENV === 'production';
+const NODE_ENV = process.env.NODE_ENV
+const IS_DEV = NODE_ENV === 'development'
+const IS_PROD = NODE_ENV === 'production'
 
 function setupDevtool() {
   if (IS_DEV) {
-    return 'eval';
+    return 'eval'
   }
 
   if (IS_PROD) {
-    return false;
+    return false
   }
 }
 
@@ -42,4 +42,4 @@ module.exports = {
     hot: IS_DEV
   },
   devtool: setupDevtool()
-};
+}
